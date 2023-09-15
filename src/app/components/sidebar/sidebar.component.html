@@ -1,0 +1,297 @@
+<div class="logo">
+    <a href="https://www.creative-tim.com" class="simple-text">
+        <div class="logo-img">
+            <img src="/assets/img/angular2-logo-red.png"/>
+        </div>
+        Creative Tim
+    </a>
+</div>
+<div class="sidebar-wrapper">
+  <div *ngIf="isMobileMenu()">
+    <form class="navbar-form">
+      <span class="bmd-form-group">
+        <div class="input-group no-border">
+          <input type="text" value="" class="form-control" placeholder="Search...">
+          <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+            <i class="material-icons">search</i>
+            <div class="ripple-container"></div>
+          </button>
+        </div>
+      </span>
+    </form>
+    <ul class="nav navbar-nav nav-mobile-menu">
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">
+                <i class="material-icons">dashboard</i>
+                <p>
+                    <span class="d-lg-none d-md-block">Stats</span>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">notifications</i>
+                <span class="notification">5</span>
+                <p>
+                    <span class="d-lg-none d-md-block">Some Actions</span>
+                </p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                <a class="dropdown-item" href="#">Another Notification</a>
+                <a class="dropdown-item" href="#">Another One</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">
+                <i class="material-icons">person</i>
+                <p>
+                    <span class="d-lg-none d-md-block">Account</span>
+                </p>
+            </a>
+        </li>
+    </ul>
+  </div>
+<!-- <ul class="nav"> 
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a class="nav-link" [routerLink]="[menuItem.path]">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>   -->
+
+    <ul class="nav">
+        <li routerlinkactive="active" class="nav-item active">
+            <a class="nav-link" href="#/dashboard">
+                <i class="material-icons">dashboard</i>
+                <p>Dashboard</p></a>
+                <!----><!----><!---->
+            </li>
+            <li routerlinkactive="active" class="nav-item">
+                <!---->
+                <a data-toggle="collapse" class="nav-link" href="#components">
+                    <i class="material-icons">apps</i>
+                    <p>Membership<b class="caret"></b></p></a>
+                    <!---->
+                    <div class="collapse" id="components">
+                        <ul class="nav">
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href='#/user-profile'>
+                                    <span class="sidebar-mini">A</span>
+                                    <span class="sidebar-normal">Add Member</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/table-list">
+                                    <span class="sidebar-mini">S</span>
+                                    <span class="sidebar-normal">Search Data</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/table-list">
+                                    <span class="sidebar-mini">E</span>
+                                    <span class="sidebar-normal">Edit Data</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">
+                                    <span class="sidebar-mini">N</span>
+                                    <span class="sidebar-normal">Notify Members</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item"> 
+                                <a class="nav-link" href="javascript:void(0);">
+                                    <span class="sidebar-mini">P</span>
+                                    <span class="sidebar-normal">Pastoral Care</span>
+                                </a>
+                            </li>
+                    <!--    <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/components/icons">
+                                    <span class="sidebar-mini">I</span>
+                                    <span class="sidebar-normal">Icons</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/components/typography">
+                                    <span class="sidebar-mini">T</span>
+                                    <span class="sidebar-normal">Typography</span>
+                                </a>
+                            </li>   -->
+                            <!---->
+                        </ul>
+                    </div>
+                    <!---->
+                </li>
+                <li routerlinkactive="active" class="nav-item">
+                    <!---->
+                    <a data-toggle="collapse" class="nav-link" href="#forms">
+                        <i class="material-icons">content_paste</i>
+                        <p>Conferences<b class="caret"></b></p>
+                    </a>
+                    <!---->
+                    <div class="collapse" id="forms">
+                        <ul class="nav">
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">
+                                    <span class="sidebar-mini">E</span>
+                                    <span class="sidebar-normal">EWG</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">
+                                    <span class="sidebar-mini">W1</span>
+                                    <span class="sidebar-normal">Wholeness and Freedom 1</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">
+                                    <span class="sidebar-mini">W2</span>
+                                    <span class="sidebar-normal">Wholeness and Freedom 2</span>
+                                </a>
+                            </li>
+                       <!-- <li routerlinkactive="active" class="nav-item"> 
+                                <a class="nav-link" href="#/forms/wizard">
+                                    <span class="sidebar-mini">W</span>
+                                    <span class="sidebar-normal">Wizard</span>
+                                </a>
+                            </li>   -->
+                            <!---->
+                        </ul>
+                    </div>
+                    <!---->
+                </li>
+           <!-- <li routerlinkactive="active" class="nav-item"> 
+                    <a data-toggle="collapse" class="nav-link" href="#tables">
+                        <i class="material-icons">grid_on</i>
+                        <p>Cell Groups<b class="caret"></b></p>
+                    </a>
+                    <div class="collapse" id="tables">
+                        <ul class="nav">
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-mini">RT</span>
+                                    <span class="sidebar-normal">Regular Tables</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-mini">ET</span>
+                                    <span class="sidebar-normal">Extended Tables</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-mini">DT</span>
+                                    <span class="sidebar-normal">Datatables.net</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li routerlinkactive="active" class="nav-item">
+                    <a data-toggle="collapse" class="nav-link" href="#maps">
+                        <i class="material-icons">place</i>
+                        <p>Maps<b class="caret"></b></p>
+                    </a>
+                    <div class="collapse" id="maps">
+                        <ul class="nav">
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/maps/google">
+                                    <span class="sidebar-mini">GM</span>
+                                    <span class="sidebar-normal">Google Maps</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/maps/fullscreen">
+                                    <span class="sidebar-mini">FSM</span>
+                                    <span class="sidebar-normal">Full Screen Map</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/maps/vector">
+                                    <span class="sidebar-mini">VM</span>
+                                    <span class="sidebar-normal">Vector Map</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>   -->
+                <li routerlinkactive="active" class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);">
+                        <i class="material-icons">people</i>
+                        <p>Cell Groups</p>
+                    </a>
+                    <!----><!----><!---->
+                </li>
+                <li routerlinkactive="active" class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);">
+                        <i class="material-icons">smartphone</i>
+                        <p>WhatsApp</p>
+                    </a>
+                    <!----><!----><!---->
+                </li>
+                <li routerlinkactive="active" class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);">
+                        <i class="material-icons">date_range</i>
+                        <p>Calendar</p>
+                    </a>
+                    <!----><!----><!---->
+                </li>
+           <!-- <li routerlinkactive="active" class="nav-item"> 
+                    <a data-toggle="collapse" class="nav-link" href="#pages">
+                        <i class="material-icons">image</i>
+                        <p>Pages<b class="caret"></b></p>
+                    </a>
+                    <div class="collapse" id="pages">
+                        <ul class="nav">
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/pages/pricing">
+                                    <span class="sidebar-mini">P</span>
+                                    <span class="sidebar-normal">Pricing</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/pages/timeline">
+                                    <span class="sidebar-mini">TP</span>
+                                    <span class="sidebar-normal">Timeline Page</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/pages/login">
+                                    <span class="sidebar-mini">LP</span>
+                                    <span class="sidebar-normal">Login Page</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/pages/register">
+                                    <span class="sidebar-mini">RP</span>
+                                    <span class="sidebar-normal">Register Page</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/pages/lock">
+                                    <span class="sidebar-mini">LSP</span>
+                                    <span class="sidebar-normal">Lock Screen Page</span>
+                                </a>
+                            </li>
+                            <li routerlinkactive="active" class="nav-item">
+                                <a class="nav-link" href="#/pages/user">
+                                    <span class="sidebar-mini">UP</span>
+                                    <span class="sidebar-normal">User Page</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li routerlinkactive="active" class="nav-item">
+                    <a class="nav-link" href="#/documentation/tutorial">
+                        <i class="material-icons">school</i>
+                        <p>Documentation</p>
+                    </a>
+                </li>   -->
+            </ul>
+
+</div>
